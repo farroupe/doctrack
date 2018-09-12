@@ -1,5 +1,10 @@
 package pages;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +21,18 @@ public class Recepcion extends AbstractPageObject{
 
 	
 	String doc = "0223108968020101";
-
+	
+	
+	public void ChekPage() {
+		String titulo = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/h2")).getText();
+			
+		WebElement salirBtn = driver.findElement(By.tagName("a"));
+		Boolean btnSalir= salirBtn.isDisplayed();
+		
+		assertEquals("Recepción", titulo);
+		assertTrue(btnSalir);
+	}
+	
 	
 	public void EnterDocCode() {	
 		WebElement docCode = driver.findElement(By.id("input-codigo-hoja"));
@@ -24,8 +40,25 @@ public class Recepcion extends AbstractPageObject{
 	}
 	
 	public void PickCode() {
-		WebElement bntSearch = driver.findElement(By.xpath("//*[@id=\"consultas\"]/div[1]/div[2]/button"));
+		WebElement bntSearch = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[1]/form/div[2]/button"));
 		bntSearch.click();
+	}
+	
+	
+	public void CheckCredit() throws InterruptedException {
+		
+		TimeUnit.SECONDS.sleep(2);
+		
+		WebElement wCredito = driver.findElement(By.xpath("//*[@id=\"placeholder-template-legajo\"]/div/div/div[1]/h4"));
+			String credito = wCredito.getText();
+			System.out.println(credito);
+			
+			String credito2 = credito.substring(8,11);
+			
+			System.out.println(credito2);
+			
+			
+		
 	}
 			
 	

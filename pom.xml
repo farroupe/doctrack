@@ -10,77 +10,75 @@
   <name>DocTrack</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+   <properties>
+  
+  <!-- Solución para problema con estructura switch java -->
+ <!--    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+ <!--    <maven.compiler.source>1.8</maven.compiler.source>-->
+  <!--   <maven.compiler.target>1.8</maven.compiler.target> -->
+  <!-- =================================================== -->
 
+
+
+  </properties>
   <dependencies>
+    
+    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>3.12.0</version>
+	</dependency>
+    
+    <dependency>
+    	<groupId>com.opencsv</groupId>
+    	<artifactId>opencsv</artifactId>
+    	<version>4.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>xalan</groupId>
+    	<artifactId>xalan</artifactId>
+    	<version>2.7.1</version>
+    </dependency>
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+      <version>4.12</version>
+      <scope>test</scope>   
+     </dependency>
+    
   </dependencies>
- 
- 
-  <build>
-    <!-- To define the plugin version in your parent POM -->
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <!-- To use the plugin goals in your POM or parent POM -->
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.0</version>
-      </plugin>
-     
-      <plugin>
-     <groupId>org.eclipse.m2e</groupId>
-     <artifactId>lifecycle-mapping</artifactId>
-     <version>1.0.0</version>
-     <configuration>
-       <lifecycleMappingMetadata>
-         <pluginExecutions>
-           <pluginExecution>
-             <pluginExecutionFilter>
-               <groupId>some-group-id</groupId>
-               <artifactId>some-artifact-id</artifactId>
-               <versionRange>[1.0.0,)</versionRange>
-               <goals>
-                 <goal>some-goal</goal>
-               </goals>
-             </pluginExecutionFilter>
-             <action>
-               <ignore/>
-             </action>
-           </pluginExecution>
-         </pluginExecutions>
-       </lifecycleMappingMetadata>
-     </configuration>
-    </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-        </configuration>
-      </plugin>
-  
-    </plugins>
-  </build>
+
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.21.0</version>
+			 <configuration>
+           <systemPropertyVariables>
+             <propertyName>propertyValue</propertyName>
+             <buildDirectory>${project.build.directory}</buildDirectory>
+				<includes>
+					<include>AppTest.java</include>
+				</includes>
+           </systemPropertyVariables>
+         </configuration>
+		</plugin>
+		<plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>3.8.0</version>
+	        <configuration>
+	          <source>1.8</source>
+	          <target>1.8</target>
+	        </configuration>
+	     </plugin>
+	
+	</plugins>
+</build>
   
   
 </project>

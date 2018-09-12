@@ -21,9 +21,7 @@ public class AbstractPageObject {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-	public AbstractPageObject() {
 
-	}
+
 
 }
