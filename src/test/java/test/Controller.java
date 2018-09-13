@@ -5,27 +5,30 @@ package test;
 import org.junit.Test;
 
 
-public class Controlador {
+public class Controller {
 
-//String perfil = "envio";	
-String perfil = "recepcion";
-//String perfil = "seguimiento";
 
 
 //ENVIO ==============================================================================	
 
+	@Test
 	public void CLoginToEnvio() {
 		LoginTest doctrack = new LoginTest();
-		doctrack.LTLoginToDockTrack(perfil);
+		doctrack.LTLoginToDTEnvio();
 	}
 	
 	
 	public void CCheckPageEnvio() {
 		LoginTest doctrack = new LoginTest();
-		doctrack.LTLoginToDockTrack(perfil);
+		doctrack.LTLoginToDTEnvio();
 		doctrack.LTCheckPageEnvio();
 	}
 	
+	public void CloseLot() {
+		LoginTest doctrack = new LoginTest();
+		doctrack.LTLoginToDTEnvio();
+		doctrack.LTPckUpDocSheet();
+	}
 	
 	
 // RECEPCION =========================================================================	
@@ -33,21 +36,20 @@ String perfil = "recepcion";
 	
 	public void CLoginToRecep() {
 		LoginTest doctrack = new LoginTest();
-		doctrack.LTLoginToDockTrack(perfil);
+		doctrack.LTLoginToDTRecep();
 		
-	}
-	
+	}	
 
 	public void CCheckPageRecep() {
 		LoginTest doctrack = new LoginTest();
-		doctrack.LTLoginToDockTrack(perfil);
+		doctrack.LTLoginToDTRecep();
 		doctrack.LTCheckPageRecep();
 	}
 	
-	@Test
+	
 	public void CPickUpSheet() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
-		doctrack.LTLoginToDockTrack(perfil);
+		doctrack.LTLoginToDTRecep();
 		doctrack.LTEnterCode();
 		doctrack.LTPickCode();
 		doctrack.LTCheckCredit();
@@ -60,7 +62,7 @@ String perfil = "recepcion";
 	
 	public void CLoginToSeg() {
 		LoginTest doctrack = new LoginTest();
-
+		doctrack.LTLoginToDTSeg();
 	}
 
 

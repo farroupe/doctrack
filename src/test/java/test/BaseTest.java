@@ -8,12 +8,22 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseTest {
+	
+	
 	//Chrome
 	public static final String URL_TECHNETTS = "http://doctrack-test.lorfin.com.ar";
 	public static final String WEB_DRIVER_PATH ="./lib/chromedriver";
 	public static final String WEB_DRIVER_CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver"; 
 	public static WebDriver driver;
 	public static WebDriverWait driverWait;
+	public static final String USUARIO_ENVIO = "qa_envio";
+	public static final String PASS_ENVIO = "123456";
+	public static final String USUARIO_RECEPCION = "qa_recep";
+	public static final String PASS_RECEPCION = "fravega18";
+	public static final String USUARIO_SEG= "qa_seg";
+	public static final String PASS_SEG = "123456";
+	
+	
 	
 	//Mozilla Firefox
 	

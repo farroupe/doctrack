@@ -3,19 +3,19 @@ package dt.DocTrack;
 
 import org.junit.Test;
 
-import test.Controlador;
+import test.Controller;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest extends Controlador{
+public class AppTest extends Controller{
 
 	
 // ENVIO ==============================================================================	
 	
 
 	public void DTCheckEnvio() {
-		Controlador dt = new Controlador();
+		Controller dt = new Controller();
 		dt.CCheckPageEnvio();
 	}
 	
@@ -26,14 +26,14 @@ public class AppTest extends Controlador{
 	
 	@Test
 	public void DTCheckRecep() {
-		Controlador dt = new Controlador();
+		Controller dt = new Controller();
 		dt.CCheckPageRecep();
 	}
 	
 	
 	@Test
 	public void DTPickSheet() throws InterruptedException {
-		Controlador dt = new Controlador();
+		Controller dt = new Controller();
 		dt.CPickUpSheet();
 		
 	}

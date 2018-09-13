@@ -15,7 +15,19 @@ public class Seguimiento extends AbstractPageObject{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void SetDate() {
+
+	WebElement efectividadSolapa = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div[1]/ul/li[1]/a"));
+	WebElement consultaSolapa = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div[1]/ul/li[2]/a"));
+	WebElement reportesSolapa = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div[1]/ul/li[3]/a"));
+	
+	
+	public void CheckPage() {
+		
+		
+	}
+		
+		
+	public void SetDate(String mes) {
 		
 		WebElement dateSince = driver.findElement(By.xpath("//*[@id=\"filtro-fecha-desde\"]"));
 		WebElement dateUntil = driver.findElement(By.xpath("//*[@id=\"filtro-fecha-hasta\"]"));
@@ -26,9 +38,9 @@ public class Seguimiento extends AbstractPageObject{
 		
 		//Seleccionar mes.
 		WebElement selectMonth = driver.findElement(By.xpath("//*[@id=\"filtro-fecha-desde_root\"]/div/div/div/div/div[2]/div/select[1]"));
-			new Select(selectMonth).selectByVisibleText("Febrero");
+			new Select(selectMonth).selectByVisibleText(mes);
 		
-		//Seleccionar día.	
+		//Seleccionar dï¿½a.	
 		WebElement dayPkd = driver.findElement(By.xpath("//*[@id=\"filtro-fecha-desde_table\"]/tbody/tr[1]/td[5]/div"));
 			dayPkd.click();
 		

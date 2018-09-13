@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pageFactory.AbstractPageObject;
 
 public class Recepcion extends AbstractPageObject{
-	
+
 	public Recepcion(WebDriver driver, WebDriverWait driverWait) {
 		super(driver);
 		// TODO Auto-generated constructor stub
@@ -21,6 +21,8 @@ public class Recepcion extends AbstractPageObject{
 
 	
 	String doc = "0223108968020101";
+	
+	String credito = doc.substring(0,10);
 	
 	
 	public void ChekPage() {
@@ -50,16 +52,32 @@ public class Recepcion extends AbstractPageObject{
 		TimeUnit.SECONDS.sleep(2);
 		
 		WebElement wCredito = driver.findElement(By.xpath("//*[@id=\"placeholder-template-legajo\"]/div/div/div[1]/h4"));
-			String credito = wCredito.getText();
-			System.out.println(credito);
+			String creditoX = wCredito.getText();
+		//	System.out.println(creditoX);
 			
-			String credito2 = credito.substring(8,11);
+			String credPrefijo = creditoX.substring(8,11);
+			String credSufijo = creditoX.substring(12,19);
 			
-			System.out.println(credito2);
+		//	System.out.println("El número de crédito es: " + credito);
+		//	System.out.println("Prefijo: "+ credPrefijo);
+		//	System.out.println("Sufijo: " + credSufijo);
 			
-			
+			String credCon = (credPrefijo+credSufijo);
 		
+		//	System.out.println(credCon);
+			
+			 assertEquals(credito, credCon);
+			
+			
+			
+			System.out.println("Este es el credito: "+credito);
+			System.out.println("Este es el credito comparativos: "+credCon);
+			
+			GetOut();
 	}
 			
+	
+
+	
 	
 }

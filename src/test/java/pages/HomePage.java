@@ -12,13 +12,23 @@ public class HomePage extends AbstractPageObject {
 	
 	public HomePage(WebDriver driver, WebDriverWait driverWait) {
 		super(driver, driverWait);
-		// TODO Auto-generated constructor stub
+	 	// TODO Auto-generated constructor stub
 	}
 
 	WebElement usuName = driver.findElement(By.name("username"));
 	WebElement usuPass = driver.findElement(By.id("doctrack-js-input-contraseña"));
 	WebElement btn = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div[1]/form/div[3]/button"));
 	
+	
+	public void LoginToDocTrack(String user, String pass) {
+		usuName.sendKeys(user);
+		usuPass.sendKeys(pass);
+		btn.click();
+	}
+	
+	
+	
+/*	
 	public void LoginToDocTrack(String perfil) {
 
 		
@@ -40,11 +50,14 @@ public class HomePage extends AbstractPageObject {
 					btn.click();
 			break;
 	 
-		}
-		
-		
+		}	
 	
-}
+	}
+*/
 	
 
+	
+
+	
+	
 }

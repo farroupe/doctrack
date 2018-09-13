@@ -2,6 +2,8 @@ package pages;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,10 +17,12 @@ public class Envio extends AbstractPageObject{
 	public Envio(WebDriver driver, WebDriverWait driverWait) {
 		super(driver, driverWait);
 		// TODO Auto-generated constructor stub
-	}
+    }
 
 	
 	public void CheckPage() {
+		
+		
 		String titulo = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/h2")).getText();
 		String subtitulo =  driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[1]/h5")).getText();
 		String col1 = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[3]/table/thead/tr/th[1]")).getText();
@@ -27,13 +31,11 @@ public class Envio extends AbstractPageObject{
 		String col4 = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[3]/table/thead/tr/th[4]")).getText();
 		String col5 = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[3]/table/thead/tr/th[5]")).getText();
 		String col6 = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div/div[3]/table/thead/tr/th[6]")).getText();
-		
-		
+			
 		
 //		WebElement credPendBtn = driver.findElement(By.xpath("//*[@id='index-banner']/div/div[2]/a"));
 		WebElement salirBtn = driver.findElement(By.tagName("a"));
 		Boolean btnSalir= salirBtn.isDisplayed();
-			
 		
 		
 	//	driver.findElement(By.tagName("a")).getText();
@@ -56,6 +58,25 @@ public class Envio extends AbstractPageObject{
 		assertEquals("Condiciones de Frávega", col4);
 		assertEquals("Condiciones de Sáenz", col5);
 		assertEquals("Enviar incompleto info_outline", col6);
+		
+		
+	}
+	
+	WebElement docTrackTable = driver.findElement(By.id("doctrack-js-tabla-documentacion-pendiente"));
+	
+	
+	
+	public void PickUpDocSheet() {
+		List<WebElement> tds = docTrackTable.findElements(By.tagName("td"));
+		
+		System.out.println(tds);
+		
+	/*	
+		for (Integer i=0;i<10;i++) {
+		}
+		*/
+	//	WebElement credNum =  
+		
 	}
 	
 	

@@ -17,15 +17,15 @@ public class LoginTest extends BaseTest {
 		super.setup();
 		}	
 	
-	
-//======================= LOGIN ==========================	
-	
-	public void LTLoginToDockTrack(String perfil) {
-		HomePage login = new HomePage(driver, driverWait);	
-		login.LoginToDocTrack(perfil);
-	}
+
 
 //======================= ENVIO ==========================		
+	
+	public void LTLoginToDTEnvio() {
+		HomePage login = new HomePage(driver, driverWait);	
+		login.LoginToDocTrack(USUARIO_ENVIO,PASS_ENVIO);
+	}
+	
 	
 	public void LTCheckPageEnvio() {
 		Envio envio =  new Envio(driver, driverWait);
@@ -33,7 +33,21 @@ public class LoginTest extends BaseTest {
 	}
 	
 	
+	public void LTPckUpDocSheet() {
+		Envio envio = new Envio(driver, driverWait);
+		envio.PickUpDocSheet();
+	}
+	
+	
+	
 //======================= RECEPCIÓN ====================		
+	
+	public void LTLoginToDTRecep() {
+		HomePage login = new HomePage(driver, driverWait);	
+		login.LoginToDocTrack(USUARIO_RECEPCION,PASS_RECEPCION);
+	}
+	
+	
 	
 	public void LTEnterCode() {
 		Recepcion recepcion = new Recepcion(driver, driverWait);
@@ -61,15 +75,10 @@ public class LoginTest extends BaseTest {
 	
 //======================= SEGUIMIENTO ====================	
 	
-	//public void 
-	
-	
-	public void LTSetDate() {
-		Seguimiento seg = new Seguimiento(driver, driverWait);
-		seg.SetDate();
+	public void LTLoginToDTSeg() {
+		HomePage login = new HomePage(driver, driverWait);	
+		login.LoginToDocTrack(USUARIO_SEG,PASS_SEG);
 	}
-
-
 
 	
 	
