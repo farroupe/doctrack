@@ -21,7 +21,7 @@ public class BaseTest {
 	public static final String USUARIO_RECEPCION = "qa_recep";
 	public static final String PASS_RECEPCION = "fravega18";
 	public static final String USUARIO_SEG= "qa_seg";
-	public static final String PASS_SEG = "123456";
+	public static final String PASS_SEG = "fravega18";
 	
 	
 	

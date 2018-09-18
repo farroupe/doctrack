@@ -13,19 +13,20 @@ public class AppTest extends Controller{
 	
 // ENVIO ==============================================================================	
 	
-
-	public void DTCheckEnvio() {
+	@Test
+	public void DTCheckEnvio() throws InterruptedException {
 		Controller dt = new Controller();
 		dt.CCheckPageEnvio();
 	}
 	
+
 	
 	
 // RECEPCION =========================================================================	
 	
 	
 	@Test
-	public void DTCheckRecep() {
+	public void DTCheckRecep() throws InterruptedException {
 		Controller dt = new Controller();
 		dt.CCheckPageRecep();
 	}

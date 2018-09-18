@@ -63,22 +63,27 @@ public class Envio extends AbstractPageObject{
 	}
 	
 	WebElement docTrackTable = driver.findElement(By.id("doctrack-js-tabla-documentacion-pendiente"));
-	
-	
-	
+
 	public void PickUpDocSheet() {
-		List<WebElement> tds = docTrackTable.findElements(By.tagName("td"));
-		
-		System.out.println(tds);
-		
-	/*	
-		for (Integer i=0;i<10;i++) {
-		}
-		*/
-	//	WebElement credNum =  
+		// TODO Auto-generated method stub
 		
 	}
 	
+	
+	/*	
+	public void PickUpDocSheet() {
+		List<WebElement> tds = docTrackTable.findElements(By.tagName("td"));
+		
+		System.out.println("lISTA DE ELEMENTOS"tds);
+		
+	
+		for (Integer i=0;i<10;i++) {
+		}
+		
+	//	WebElement credNum =  
+		
+	}
+	*/
 	
 	
 	

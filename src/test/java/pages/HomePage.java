@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,10 +22,12 @@ public class HomePage extends AbstractPageObject {
 	WebElement btn = driver.findElement(By.xpath("//*[@id=\"index-banner\"]/div[1]/form/div[3]/button"));
 	
 	
-	public void LoginToDocTrack(String user, String pass) {
+	public void LoginToDocTrack(String user, String pass) throws InterruptedException {
 		usuName.sendKeys(user);
 		usuPass.sendKeys(pass);
 		btn.click();
+		
+		TimeUnit.SECONDS.sleep(2);
 	}
 	
 	
