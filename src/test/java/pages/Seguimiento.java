@@ -35,6 +35,10 @@ public class Seguimiento extends AbstractPageObject{
 		consultaSolapa.click();
 	}
 	
+	public void GoToReporte( ) {
+		reportesSolapa.click();
+	}
+	
 	
 	public void CheckPage() {
 		String efec = efectividadSolapa.getText();
@@ -154,6 +158,39 @@ public class Seguimiento extends AbstractPageObject{
 		}
 				
 
+	}
+	
+	
+	WebElement selectTipoFecha = driver.findElement(By.xpath("//*[@id='reporte']/div/div/div[1]/div[1]/div/select"));
+
+	WebElement cantEnvio = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[1]/div[6]/div/select"));
+	WebElement cantRecep = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[1]/div[7]/div/select"));
+
+	
+	public void DownloadReport() {
+		WebElement btnDownload = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[2]/button"));
+			btnDownload.click();
+	}
+	
+	
+	public void ConfigureReporte() {
+	//	WebElement selectTipoFecha = driver.findElement(By.id("select-options-7ab072fa-816b-5e96-861e-c7cb365280f7"));
+		
+		//	Tipo de Fecha
+		WebElement selectTipoFecha = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[1]/div[1]/div/select"));
+
+		WebElement cantEnvio = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[1]/div[6]/div/input"));
+		WebElement cantRecep = driver.findElement(By.xpath("//*[@id=\"reporte\"]/div/div/div[1]/div[7]/div/select"));
+		
+			new Select(selectTipoFecha).selectByValue("Fecha envio");
+		
+			WebElement filtroSuc = driver.findElement(By.id("filtro-numero-sucursal"));
+			WebElement filtroCredNum = driver.findElement(By.id("filtro-numero-credito"));
+				
+			new Select(cantEnvio).selectByVisibleText("Todos");
+			new Select(cantRecep).selectByVisibleText("Todos");
+			
+			DownloadReport();
 	}
 	
 	

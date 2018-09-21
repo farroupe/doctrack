@@ -16,8 +16,7 @@ public class Controller {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTEnvio();
 	}
-	
-	
+
 	public void CCheckPageEnvio() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTEnvio();
@@ -43,7 +42,7 @@ public class Controller {
 		
 	}	
 
-	
+
 	public void CCheckPageRecep() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTRecep();
@@ -79,7 +78,7 @@ public class Controller {
 		doctrack.LTExecuteReport();
 	}
 
-	@Test
+	
 	public void CReturnCreditStatusEmitido() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTSeg();
@@ -87,7 +86,7 @@ public class Controller {
 		doctrack.LTCreditStatusEmitido();
 	}
 
-	@Test
+	
 	public void CReturnCreditStatusEnviado() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTSeg();
@@ -95,12 +94,31 @@ public class Controller {
 		doctrack.LTCreditStatusEnviado();
 	}
 
-	@Test
+	
 	public void CReturnCreditStatusRecibido() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTSeg();
 		doctrack.LTGoToConsultas();
 		doctrack.LTCreditStatusRecibido();
 	}
+	
+	
+	public void CViewReport( ) throws InterruptedException {
+		LoginTest doctrack = new LoginTest();
+		doctrack.LTLoginToDTSeg();
+		doctrack.LTGoToReporte();
+		doctrack.LTDownloadExcelReport();
+		
+	}
+	
+	@Test
+	public void CCofigureReport() throws InterruptedException {
+		LoginTest doctrack = new LoginTest();
+		doctrack.LTLoginToDTSeg();
+		doctrack.LTGoToReporte();
+		doctrack.LTConfigureReport();
+		
+	}
+	
 	
 }

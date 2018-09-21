@@ -63,6 +63,9 @@
              <buildDirectory>${project.build.directory}</buildDirectory>
 				<includes>
 					<include>AppTest.java</include>
+					<include>Enviado.java</include>
+					<include>Recepcion.java</include>
+					<include>Recepcion.java</include>
 				</includes>
            </systemPropertyVariables>
          </configuration>

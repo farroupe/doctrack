@@ -138,5 +138,18 @@ public class LoginTest extends BaseTest {
 		
 	//  REPORTE | 
 		
-	
+		public void LTGoToReporte() {
+			Seguimiento seg = new Seguimiento(driver, driverWait);
+			seg.GoToReporte();
+		}
+		
+		public void LTDownloadExcelReport() {
+			Seguimiento seg = new Seguimiento(driver, driverWait);
+			seg.DownloadReport();
+		}
+
+		public void LTConfigureReport() {
+			Seguimiento seg = new Seguimiento(driver, driverWait);
+			seg.ConfigureReporte();
+		}
 }
