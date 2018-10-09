@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
 	}
 	
 	
-	public void LTPckUpDocSheet() {
+	public void LTPckUpDocSheet() throws InterruptedException {
 		Envio envio = new Envio(driver, driverWait);
 		envio.PickUpDocSheet();
 	}

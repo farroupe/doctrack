@@ -23,7 +23,7 @@ public class Controller {
 		doctrack.LTCheckPageEnvio();
 	}
 	
-	
+	@Test
 	public void CCloseLot() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTEnvio();
@@ -63,7 +63,7 @@ public class Controller {
 // SEGUIMIENTO =======================================================================	
 	
 
-	public void CLoginToSeg() throws InterruptedException {
+	public void CCheckPageSeg() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTSeg();
 		doctrack.LTCheckPageSeg();
@@ -111,7 +111,7 @@ public class Controller {
 		
 	}
 	
-	@Test
+	
 	public void CCofigureReport() throws InterruptedException {
 		LoginTest doctrack = new LoginTest();
 		doctrack.LTLoginToDTSeg();
