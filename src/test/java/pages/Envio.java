@@ -76,14 +76,14 @@ public class Envio extends AbstractPageObject{
 		      //  System.out.println(elements.size());
 		        
 		        System.out.println("Elemento " + ele.getAttribute("id"));
+		 //       System.out.println(ele.getText());
 		     
-	        for(int i=0; i <= 10; i++) {
-		        	docs[i] = td;      
+		        for(int i=0; i<10; i++) {
+		        	docs[i]=td;      
+		        	System.out.println("Array"+docs[i]);
+		     	
 		        }
 		}
-		
-	//	System.out.println("DOCS: "+ docs);
 	}
-
-
 }
+
